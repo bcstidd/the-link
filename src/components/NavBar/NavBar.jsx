@@ -12,7 +12,7 @@ export default function NavBar({ user, setUser }) {
         <nav>
             <Link to="/featured">Artist Spotlight</Link>
             &nbsp; | &nbsp;
-            <Link to="/orders/new">New Order</Link>
+            <Link to="/artists">All Artists</Link>
             &nbsp;&nbsp; Welcome, {user.name}
             &nbsp;&nbsp;<Link to="" onClick={handleLogOut}>Log Out</Link>
         </nav>

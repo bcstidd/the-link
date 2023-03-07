@@ -1,0 +1,55 @@
+import ArtistCard from "../../components/ArtistCard/ArtistCard";
+
+// import "./MoviesListPage.css";
+export default function ArtistIndexPage({artists}) {
+  const [selectedStyle, setSelectedStyle] = useState(null);
+
+  const handleStyleClick = (style) => {
+      setSelectedStyle(style);
+  };
+
+  const filteredArtists = artists.filter((artist) => {
+      return artist.style.includes(selectedStyle);
+  });
+
+  const styles = artists.reduce((styles, artist) => {
+      artist.style.forEach((style) => {
+          if (!styles.includes(style)) styles.push(style);
+      });
+      return styles;
+  }, []);
+  
+  return (
+      <div className="container">
+          <nav>
+              {styles.map((style) => {
+                  return (
+                      <StylePage
+                          key={style}
+                          style={style}
+                          isActive={style === selectedStyle}
+                          onClick={() => handleStyleClick(style)}
+                      />
+                  );
+              })}
+          </nav>
+          {filteredArtists.map((artist) => {
+              return <ArtistCard key={artist.name} artist={artist} />;
+          })}
+      </div>
+  );
+}
+// export default function ArtistIndexPage({artists}) {
+//     const artistIndex = styles.reduce((artists, a) => {
+//         a.style.forEach((name) => {
+//             if (!artists.includes(style)) artists.push(style);
+//         })
+//     })
+//   return (
+//     <div className="container">
+//       {props.artists.map((artist) => {
+//         return <ArtistCard key={artist.name} artist={artist} />;
+//       })}
+//     </div>
+//   );
+// }
