@@ -10,6 +10,7 @@ exports.artists = [
 
     {
         name: "Kat Von D",
+        photo: '',
         style: ['Portrait'],
         shop: 'High Voltage Tattoo: Los Angeles',
         reviews: [reviewSchema],
@@ -18,14 +19,16 @@ exports.artists = [
 
     {
         name: 'Ed Hardy',
+        photo: '',
         style: ['American Traditional', 'Japanese'],
-        shop: ['Retired'],
+        shop: ['Tattoo Royale: Honolulu. HI'],
         reviews: [reviewSchema],
         portfolio: "https://sharksink.com/artist/don-ed-hardy/#:~:text=Ed%20Hardy%3A%20Deeper%20than%20Skin,Japan's%20ukiyo%2De%20era%20culture.",
     },
 
     {
         name: 'Dr. Woo',
+        photo: '',
         style: ['Fine Line', 'Micro', 'Single Needle'],
         shop: ['Hideaway at Suite X: Los Angeles, CA'],
         reviews: [reviewSchema],
@@ -34,6 +37,7 @@ exports.artists = [
 
     {
         name: 'Jesse Iris',
+        photo: '',
         style: ['Black & Gray'],
         shop: ['Scapegoat Tattoo: Portland, OR'],
         reviews: [reviewSchema],
@@ -42,6 +46,7 @@ exports.artists = [
 
     {
         name: 'John Wilson', 
+        photo: '',
         style: ['Americanm Traditional', 'Ornamental'],
         shop: ['Scapegoat Tattoo: Portland, OR'],
         reviews: [reviewSchema],
@@ -50,6 +55,7 @@ exports.artists = [
 
     {
         name: 'Alena Chun',
+        photo: '',
         style: ['American Traditional'],
         shop: ['Icon Tattoo: Portland, OR'],
         reviews: [reviewSchema],
@@ -57,7 +63,17 @@ exports.artists = [
     },
 
     {
+        name: 'Mickey Carlisle',
+        photo: '',
+        style: ['Fine Line', 'Black & Gray'],
+        shop: 'Icon Tattoo: Portland, OR',
+        reviews: [reviewSchema],
+        portfolio: 'https://www.icontattoostudio.com/mickey-carlisle',
+    },
+
+    {
         name: String,
+        photo: '',
         style: [String],
         shop: [string],
         yearsOfExp: Number,
@@ -67,6 +83,7 @@ exports.artists = [
 
     {
         name: String,
+        photo: '',
         style: [String],
         shop: [string],
         yearsOfExp: Number,
@@ -76,6 +93,7 @@ exports.artists = [
 
     {
         name: String,
+        photo: '',
         style: [String],
         shop: [string],
         yearsOfExp: Number,
@@ -85,6 +103,7 @@ exports.artists = [
 
     {
         name: String,
+        photo: '',
         style: [String],
         shop: [string],
         yearsOfExp: Number,
@@ -94,6 +113,7 @@ exports.artists = [
 
     {
         name: String,
+        photo: '',
         style: [String],
         shop: [string],
         yearsOfExp: Number,
@@ -103,6 +123,7 @@ exports.artists = [
 
     {
         name: String,
+        photo: '',
         style: [String],
         shop: [string],
         yearsOfExp: Number,
@@ -112,6 +133,7 @@ exports.artists = [
 
     {
         name: String,
+        photo: '',
         style: [String],
         shop: [string],
         yearsOfExp: Number,
@@ -121,15 +143,7 @@ exports.artists = [
 
     {
         name: String,
-        style: [String],
-        shop: [string],
-        yearsOfExp: Number,
-        reviews: [reviewSchema],
-        portfolio: String,
-    },
-
-    {
-        name: String,
+        photo: '',
         style: [String],
         shop: [string],
         yearsOfExp: Number,
