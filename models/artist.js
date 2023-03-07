@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const reviewSchema = newSchema({
+    user: [userSchema],
     content: String,
     rating: Number,
 }, {
@@ -10,11 +11,12 @@ const reviewSchema = newSchema({
 
 const artistSchema = newSchema({
     name: String,
+    photo: String,
     style: [String],
-    shop: [string],
-    yearsOfExp: Number,
-    reviews: [reviewSchema]
+    shop: String,  
+    reviews: [reviewSchema],
+    portfolio: String,
 })
 
 
-module.exports = mongoose.model('User', userSchema);
+module.exports = mongoose.model('Artist', artistSchema);
