@@ -7,7 +7,6 @@ export default function StyleCard(props) {
         <div className="card">
           <div className="a-style">
             <h1>{props.style.style}</h1>
-            {/* <h4>Released: {props.movie.releaseDate}</h4> */}
           </div>
         </div>
       </Link>

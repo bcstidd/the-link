@@ -1,5 +1,5 @@
 import ArtistCard from "../../components/ArtistCard/ArtistCard";
-import artists from "../../data.js";
+// import {artists} from "../../data.js";
 
 // import "./MoviesListPage.css";
 // export default function ArtistIndexPage({artists}) {
@@ -40,13 +40,17 @@ import artists from "../../data.js";
 //       </div>
 //   );
 // }
-
-export default function ArtistIndexPage(props) {
+export default function ArtistIndexPage({ artists }) {
+    if (!Array.isArray(artists)) {
+        console.log(typeof artists)
+      return <div>No artists found.</div>;
+    }
+  
     return (
-        <div className="container">
-            {artists.map((artist) => {
-                return <ArtistCard key={artist.name} artist={artist} />;
-            })}
-        </div>
+      <div>
+        {artists.map((artist) => (
+          <ArtistCard key={artist.name} artist={artist} />
+        ))}
+      </div>
     );
-}
+  }

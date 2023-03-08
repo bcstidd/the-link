@@ -18,6 +18,10 @@ export default function ArtistDetail({ artists }) {
         </div>
       </div>
       <img src={`${artist.photo}`} alt="" />
+    <div class='reviews'>
+      <h2>reviews</h2>
     </div>
+    </div>
+
   );
 }
