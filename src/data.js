@@ -1,17 +1,18 @@
 exports.artists = [
     {
         name: 'Lazer Liz',
-        photo: 'https://i0.wp.com/tattmag.com/wp-content/uploads/2020/01/liz-scaled.jpg?resize=1024%2C1312&ssl=1',
+        cover: '',
         style: ['Fine Line', 'Black & Gray', 'Floral', 'Realism'],
         shop: 'Bang Bang Tattoo: New York City',
+        photo: 'https://i0.wp.com/tattmag.com/wp-content/uploads/2020/01/liz-scaled.jpg?resize=1024%2C1312&ssl=1',
         // reviews: [],
         portfolio: 'https://www.bangbangforever.com/artist-lazerliz',
-    },
+    },  
 
     {
         name: "Kat Von D",
-        photo: '',
-        style: ['Portrait'],
+        cover: '',
+        style: ['Portraits'],
         shop: 'High Voltage Tattoo: Los Angeles',
         // reviews: [],
         portfolio: 'https://www.highvoltagetattoo.com/',
@@ -19,7 +20,7 @@ exports.artists = [
 
     {
         name: 'Ed Hardy',
-        photo: '',
+     cover: '',
         style: ['American Traditional', 'Japanese'],
         shop: ['Tattoo Royale: Honolulu. HI'],
         // reviews: [],
@@ -28,7 +29,7 @@ exports.artists = [
 
     {
         name: 'Dr. Woo',
-        photo: '',
+     cover: '',
         style: ['Fine Line', 'Micro', 'Single Needle'],
         shop: ['Hideaway at Suite X: Los Angeles, CA'],
         // reviews: [],
@@ -37,7 +38,7 @@ exports.artists = [
 
     {
         name: 'Jesse Iris',
-        photo: '',
+     cover: '',
         style: ['Black & Gray'],
         shop: ['Scapegoat Tattoo: Portland, OR'],
         // reviews: [],
@@ -46,7 +47,7 @@ exports.artists = [
 
     {
         name: 'John Wilson', 
-        photo: '',
+     cover: '',
         style: ['American Traditional', 'Ornamental'],
         shop: ['Scapegoat Tattoo: Portland, OR'],
         // reviews: [],
@@ -55,7 +56,7 @@ exports.artists = [
 
     {
         name: 'Alena Chun',
-        photo: '',
+     cover: '',
         style: ['American Traditional'],
         shop: ['Icon Tattoo: Portland, OR'],
         // reviews: [],
@@ -64,7 +65,7 @@ exports.artists = [
 
     {
         name: 'Mickey Carlisle',
-        photo: '',
+        cover: '',
         style: ['Fine Line', 'Black & Gray'],
         shop: 'Icon Tattoo: Portland, OR',
         // reviews: [],
@@ -73,7 +74,7 @@ exports.artists = [
 
     // {
     //     name: String,
-    //     photo: '',
+    //     cover: '',
     //     style: [String],
     //     shop: [string],
     //     yearsOfExp: Number,
@@ -83,7 +84,7 @@ exports.artists = [
 
     // {
     //     name: String,
-    //     photo: '',
+    //     cover: '',
     //     style: [String],
     //     shop: [string],
     //     yearsOfExp: Number,
@@ -93,7 +94,7 @@ exports.artists = [
 
     // {
     //     name: String,
-    //     photo: '',
+    //     cover: '',
     //     style: [String],
     //     shop: [string],
     //     yearsOfExp: Number,
@@ -103,7 +104,7 @@ exports.artists = [
 
     // {
     //     name: String,
-    //     photo: '',
+    //     cover: '',
     //     style: [String],
     //     shop: [string],
     //     yearsOfExp: Number,
@@ -113,7 +114,7 @@ exports.artists = [
 
     // {
     //     name: String,
-    //     photo: '',
+    //     cover: '',
     //     style: [String],
     //     shop: [string],
     //     yearsOfExp: Number,
@@ -123,7 +124,7 @@ exports.artists = [
 
     // {
     //     name: String,
-    //     photo: '',
+    //     cover: '',
     //     style: [String],
     //     shop: [string],
     //     yearsOfExp: Number,
@@ -133,7 +134,7 @@ exports.artists = [
 
     // {
     //     name: String,
-    //     photo: '',
+    //     cover: '',
     //     style: [String],
     //     shop: [string],
     //     yearsOfExp: Number,
@@ -143,10 +144,12 @@ exports.artists = [
 
     // {
     //     name: String,
-    //     photo: '',
+    //     cover: '',
     //     style: [String],
     //     shop: [string],
     //     yearsOfExp: Number,
     //     reviews: [reviewSchema],
     //     portfolio: String,
     }]
+    exports.styles = ['Fine Line', 'Black & Gray', 'Floral', 'Realism', 'Portraits', 'American Traditional', 'Japanese', 'Micro', 'Single Needle', 'Ornamental'];
+exports.artist = "artist"

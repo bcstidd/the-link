@@ -2,13 +2,15 @@ import './App.css';
 import { useState } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import { getUser } from '../../utilities/users-service'
-import { artists } from '../../data';
+import { artists, styles } from '../../data';
 import AuthPage from '../AuthPage/AuthPage';
 import HomePage from '../HomePage/HomePage';
 import FeaturedArtistsPage from '../FeaturedArtistsPage/FeaturedArtistsPage';
 import ArtistIndexPage from '../ArtistIndexPage/ArtistIndexPage';
 import NavBar from '../../components/NavBar/NavBar'
 import StylePage from '../StylePage/StylePage';
+import ArtistBioPage from '../ArtistBioPage/ArtistBioPage';
+
 export default function App() {
   const [ user, setUser ] = useState(getUser())
 
@@ -22,7 +24,8 @@ export default function App() {
           <Routes>
             <Route path="/" element={<HomePage />}></Route>
             <Route path="/artists" element={<ArtistIndexPage artists={artists} />} />
-            <Route path="/styles" element={<StylePage />} />
+            <Route path="/artists/bio/:name" element={<ArtistBioPage artists={artists} />} />
+            <Route path="/styles" element={<StylePage styles={styles} />} />
             <Route path="/featured" element={<FeaturedArtistsPage />} />
           </Routes>
   

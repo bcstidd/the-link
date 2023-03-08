@@ -41,11 +41,7 @@ import ArtistCard from "../../components/ArtistCard/ArtistCard";
 //   );
 // }
 export default function ArtistIndexPage({ artists }) {
-    if (!Array.isArray(artists)) {
-        console.log(typeof artists)
-      return <div>No artists found.</div>;
-    }
-  
+
     return (
       <div>
         {artists.map((artist) => (

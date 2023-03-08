@@ -14,7 +14,6 @@ export default function NavBar({ user, setUser }) {
             &nbsp; | &nbsp;
             <Link to="/styles">Tattoo Styles</Link>
             &nbsp; | &nbsp;
-
             <Link to="/featured">Artist Spotlight</Link>
             &nbsp;&nbsp; Welcome, {user.name}
             &nbsp;&nbsp;<Link to="" onClick={handleLogOut}>Log Out</Link>

@@ -1,15 +1,24 @@
-import { Link } from "react-router-dom";
+import { artists } from '../../data';
 
-export default function StyleCard(props) {
+export default function StylePage() {
+  // Collect all the styles from the artists
+  const allStyles = artists.reduce((acc, artist) => {
+    artist.style.forEach((style) => {
+      if (!acc.includes(style)) {
+        acc.push(style);
+      }
+    });
+    return acc;
+  }, []);
+
   return (
-    <>
-      <Link to={`/${props.style.style}`} className="style-link">
-        <div className="card">
-          <div className="a-style">
-            <h1>{props.style.style}</h1>
-          </div>
-        </div>
-      </Link>
-    </>
+    <div>
+      <h1>Styles</h1>
+      <ul>
+        {allStyles.map((style) => (
+          <li key={style}>{style}</li>
+        ))}
+      </ul>
+    </div>
   );
 }
