@@ -14,7 +14,7 @@ const artistSchema = newSchema({
     photo: String,
     style: [String],
     shop: String,  
-    reviews: [reviewSchema],
+    // reviews: [reviewSchema],
     portfolio: String,
 })
 
