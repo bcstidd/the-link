@@ -22,6 +22,7 @@ const artistSchema = newSchema({
         enum: ['American Traditional', 'Fine Line', 'Black & Gray', 'Micro', 'Geometric', 'Tribal', 'Portraits', 'Japanese', 'Watercolor', 'Neo-Traditional', 'Realism', 'Trash Polka', 'Aesthetic'],
     },
     shop: String,  
+    location: String,
     photo: String,
     portfolio: String,
     reviews: [reviewSchema],

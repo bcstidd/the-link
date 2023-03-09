@@ -1,4 +1,8 @@
 .card {
     max-width: 250px;
     max-height: 200px;
+    border: 3px solid black;
+}
+.artist-link {
+    text-decoration: none;
 }
