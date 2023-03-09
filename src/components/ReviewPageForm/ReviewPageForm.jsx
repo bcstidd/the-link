@@ -1,16 +1,24 @@
 import { useState } from 'react';
 
-export default function ReviewPageForm({ handleSubmit }) {
-  const [comment, setComment] = useState('');
+export default function ReviewPageForm({ handleSubmit, edit, commentToEdit, handleCancelEdit }) {
+  const [comment, setComment] = useState(edit ? commentToEdit.content : '');
 
   const handleCommentChange = (event) => {
     setComment(event.target.value);
   };
 
-  const handleFormSubmit = (event) => {
+  const handleFormSubmit = (event, ) => {
     event.preventDefault();
-    handleSubmit(comment);
+    handleSubmit(event, comment);
     setComment('');
+  };
+
+  const handleCancelClick = () => {
+    if (edit) {
+      handleCancelEdit();
+    } else {
+      setComment('');
+    }
   };
 
   return (
@@ -20,7 +28,8 @@ export default function ReviewPageForm({ handleSubmit }) {
           Comment:
           <input type="text" value={comment} onChange={handleCommentChange} />
         </label>
-        <button type="submit">Submit</button>
+        <button type="submit">{edit ? 'Update' : 'Submit'}</button>
+        {edit && <button type="button" onClick={handleCancelClick}>Cancel</button>}
       </form>
     </>
   );
