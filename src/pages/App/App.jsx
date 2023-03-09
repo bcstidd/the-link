@@ -22,9 +22,9 @@ export default function App() {
         <>
           <NavBar user={user} setUser={setUser} />
           <Routes>
-            <Route path="/" element={<HomePage />}></Route>
+            <Route path="/" element={<HomePage />} />
             <Route path="/artists" element={<ArtistIndexPage artists={artists} />} />
-            <Route path="/artists/bio/:name" element={<ArtistBioPage artists={artists} />} />
+            <Route path="/artists/bio/:name" element={<ArtistBioPage artists={artists} user={user} />} />
             <Route path="/styles" element={<StylePage styles={styles} />} />
             <Route path="/featured" element={<FeaturedArtistsPage />} />
           </Routes>
@@ -36,5 +36,3 @@ export default function App() {
     </main>
   );
 }
-
-

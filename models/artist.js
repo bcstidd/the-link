@@ -4,12 +4,6 @@ const Schema = mongoose.Schema;
 const reviewSchema = newSchema({
     user: [userSchema],
     content: String,
-    rating: {
-        type: Number,
-        min: 1,
-        max: 5,
-        default: 5
-      }
     }, {
     timeStamps: true,
 })

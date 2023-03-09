@@ -1,31 +1,42 @@
-import { useState } from 'react';
 import { useParams } from 'react-router-dom';
-import ReviewPageForm from '../../components/ReviewPageForm/ReviewPageForm'
+import { useState } from 'react';
+import ReviewPageForm from '../../components/ReviewPageForm/ReviewPageForm';
 
-export default function ArtistBioPage({ artists }) {
+export default function ArtistBioPage({ artists, user }) {
   const { name } = useParams();
   const artist = artists.find(artist => artist.name === name);
+  const [reviews, setReviews] = useState(artist.reviews);
+
+  const handleSubmit = (comment) => {
+    const newReview = {
+      user: user,
+      content: comment,
+    };
+    setReviews([...reviews, newReview]);
+  };
 
   return (
     <div>
-      {artist ? (
-        <>
-          <div className="bio-page">
-            <h2>{artist.name}</h2>
-            <h3>{artist.shop}</h3>
-            <h3>Specializes in {artist.style.join(', ')}</h3> {/* Display styles as a space-separated list */}
-            <img src={artist.photo} alt=""/>
-            <div>
-              <h2>Reviews</h2>
-              
-            </div>
-            <ReviewPageForm />
-            <h2>Interested in learning more? View {artist.name}'s Portfolio <a href={artist.portfolio}>Here</a></h2>
-          </div>
-        </>
-      ) : (
-        <p>Sorry, we couldn't find an artist with that name.</p>
-      )}
+      <div className="bio-page">
+        <h2>{artist.name}</h2>
+        <h3>{artist.shop}</h3>
+        <h3>Specializes in {artist.style.join(', ')}</h3> 
+        <img src={artist.photo} alt=""/>
+        <div>
+          <h2>Reviews</h2>
+          {reviews.length > 0 ? (  
+            reviews.map((review, index) => (
+              <div key={index}>
+                <p> {review.user.name}:</p>
+                <p> {review.content}</p>
+              </div>
+            ))
+          ) : (
+            <p>No Reviews Yet</p>
+          )}
+          <ReviewPageForm handleSubmit={handleSubmit} />
+        </div>
+      </div>
     </div>
   );
 }
