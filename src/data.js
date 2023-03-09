@@ -1,7 +1,7 @@
 exports.artists = [
     {
         name: 'Lazer Liz',
-        cover: '',
+        cover: 'https://inkppl.com/assets/php/files/082018/33037320_820691651457158_7940539866171834368_n.jpg',
         style: ['Fine Line', 'Black & Gray', 'Floral', 'Realism'],
         shop: 'Bang Bang Tattoo: New York City',
         location: 'New York City',
@@ -32,7 +32,7 @@ exports.artists = [
 
     {
         name: 'Dr. Woo',
-     cover: '',
+     cover: 'https://www.hollywoodreporter.com/wp-content/uploads/2019/11/dr._woo_-_publicity_-_h_2019_.jpg?w=1296',
         style: ['Fine Line', 'Micro', 'Single Needle'],
         shop: ['Hideaway at Suite X: Los Angeles, CA'],
         location: 'Los Angeles, CA',

@@ -1,3 +1,15 @@
+import { useState } from 'react';
+
 export default function ReviewPageForm() {
-    return <h1>The reviews</h1>
+  return (
+    <>
+    <form>
+      <label>
+        Comment:
+        <input type="text" />
+      </label>
+      <button type="submit">Submit</button>
+    </form>
+    </>
+  )
 }
