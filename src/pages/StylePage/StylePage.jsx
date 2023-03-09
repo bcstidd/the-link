@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { artists } from "../../data";
+import './StylePage.css'
 
 export default function StyleList() {
   // group artists by style
@@ -41,14 +42,14 @@ export default function StyleList() {
             </a>
           </h2>
           {openStyles[style] && (
-            <ul>
+            <div className="styles-list">
               {artistsByStyle[style].map((artist) => (
-                <li key={artist.id}>
+                <p key={artist.id}>
                   <h3>{artist.name}</h3>
                   <h5>{artist.location}</h5>
-                </li>
+                </p>
               ))}
-            </ul>
+            </div>
           )}
         </div>
       ))}

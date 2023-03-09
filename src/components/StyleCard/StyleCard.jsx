@@ -12,13 +12,12 @@ export default function StylePage() {
   }, []);
 
   return (
-    <div>
+    <div className='styleList'>
       <h1>Styles</h1>
-      <ul>
-        {allStyles.map((style) => (
+        <p>{allStyles.map((style) => (
           <li key={style}>{style}</li>
         ))}
-      </ul>
+      </p>
     </div>
   );
 }
