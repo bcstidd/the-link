@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useState } from "react";
 import { artists } from "../../data";
 import './StylePage.css'
@@ -44,10 +45,12 @@ export default function StyleList() {
           {openStyles[style] && (
             <div className="styles-list">
               {artistsByStyle[style].map((artist) => (
-                <p key={artist.id}>
+                <div key={artist.id}>
+                  <Link to={`/artists/bio/${artist.name}`}>                 
                   <h3>{artist.name}</h3>
+                 </Link>
                   <h5>{artist.location}</h5>
-                </p>
+                </div>
               ))}
             </div>
           )}

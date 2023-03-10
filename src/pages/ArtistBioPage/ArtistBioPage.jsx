@@ -29,7 +29,7 @@ export default function ArtistBioPage({ artists, user }) {
 
   const handleDelete = (event, index) => {
     event.preventDefault();
-    const newReviews = reviews.filter((_, i) => i !== index);
+    const newReviews = reviews.filter((_, i) => i !== index); 
     setReviews(newReviews);
   };
 
