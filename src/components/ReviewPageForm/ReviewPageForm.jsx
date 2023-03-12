@@ -7,7 +7,7 @@ export default function ReviewPageForm({ handleSubmit, edit, commentToEdit, hand
     setComment(event.target.value);
   };
 
-  const handleFormSubmit = (event, ) => {
+  const handleFormSubmit = (event) => {
     event.preventDefault();
     handleSubmit(event, comment);
     setComment('');

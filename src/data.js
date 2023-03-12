@@ -8,86 +8,108 @@ exports.artists = [
         photo: 'https://i0.wp.com/tattmag.com/wp-content/uploads/2020/01/liz-scaled.jpg?resize=1024%2C1312&ssl=1',
         reviews: [],
         portfolio: 'https://www.bangbangforever.com/artist-lazerliz',
-    },  
-
-    {
-        name: "Kat Von D",
-        cover: '',
-        style: ['Portraits', 'Realism'],
-        shop: 'High Voltage Tattoo: Los Angeles',
-        location: 'Los Angeles, CA',
-        photo: '',
-        reviews: [],
-        portfolio: 'https://www.highvoltagetattoo.com/',
-    },
-
-    {
+    }, {
         name: 'Ed Hardy',
-        cover: '',
+        cover: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuBPdiGAUkAGOG97xibc5Vyf3YwUBm1NRQJw&usqp=CAU', 
         style: ['American Traditional', 'Japanese'],
         shop: ['Tattoo Royale: Honolulu, HI '], 
         location: 'Honolulu. HI',
-        photo: '',
-        reviews: [],
+        photo: 'https://nypost.com/wp-content/uploads/sites/2/2013/08/ed_hardy-300x3001.jpg?quality=75&strip=all',
+        reviews: [],    
         portfolio: "https://sharksink.com/artist/don-ed-hardy/#:~:text=Ed%20Hardy%3A%20Deeper%20than%20Skin,Japan's%20ukiyo%2De%20era%20culture.",
-    },
-
-    {
+    }, {
         name: 'Dr. Woo',
         cover: 'https://www.hollywoodreporter.com/wp-content/uploads/2019/11/dr._woo_-_publicity_-_h_2019_.jpg?w=1296',
         style: ['Fine Line', 'Micro', 'Single Needle'],
         shop: ['Hideaway at Suite X: Los Angeles, CA'],
         location: 'Los Angeles, CA',
-        photo: '',
+        photo: 'https://i.imgur.com/lZbfbLY.png',
         reviews: [],
         portfolio: 'https://drwoo.com/',
-    },
-
-    {
+    }, {
         name: 'Jesse Iris',
-        cover: '',
+        cover: 'https://images.squarespace-cdn.com/content/v1/5d6af7652a5c4f0001ea3773/1670527388425-7RC1PQLNFWXTKNBHBQZN/image-asset.jpeg?format=300w',
         style: ['Black & Gray'],
-        shop: ['Scapegoat Tattoo: Portland, OR'],
+        shop: ['Grizzly Tattoo: Portland, OR'],
         location: 'Portland, OR',
-        photo: '',
+        photo: 'https://images.squarespace-cdn.com/content/v1/5d6af7652a5c4f0001ea3773/35b60e38-8d05-47fd-834a-621f861f1903/074DD39D-EB36-4812-82CB-A3B4257825A4.jpeg?format=750w',
         reviews: [],
         portfolio: 'https://www.instagram.com/jesseiris_tattoo/',
-    },
-
-    {
+    }, {
         name: 'John Wilson', 
-        cover: '',
+        cover: 'https://i.imgur.com/K7QEvZo.png',
         style: ['American Traditional', 'Ornamental'],
         shop: ['Scapegoat Tattoo: Portland, OR'],
         location: 'Portland, OR',
-        photo: '',
+        photo: 'https://static.wixstatic.com/media/b12c97_49556c0c3d2240d99bd466587377fa08~mv2.jpg/v1/fill/w_178,h_217,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/b12c97_49556c0c3d2240d99bd466587377fa08~mv2.jpg',
         reviews: [],
         portfolio: 'https://www.scapegoattattoo.com/john-wilson',
     },
 
     {
         name: 'Alena Chun',
-        cover: '',
+        cover: 'https://images.squarespace-cdn.com/content/v1/54f8a9c9e4b0b230c7abb1b9/1661921015835-HPFCR6X640E82R2LNC4D/image-asset.jpeg?format=300w',
         style: ['American Traditional'],
         shop: ['Icon Tattoo: Portland, OR'],
         location: 'Portland, OR',
-        photo: '',
+        photo: 'https://images.squarespace-cdn.com/content/v1/54f8a9c9e4b0b230c7abb1b9/74d026b7-2d5f-44cd-bbb3-e8ada9790114/Icon_Tattoo-Alena_Chun-1.jpg?format=500w',
         reviews: [],
         portfolio: 'https://www.icontattoostudio.com/artists',
-    },
-
-    {
+    }, {
         name: 'Mickey Carlisle',
-        cover: '',
+        cover: 'https://images.squarespace-cdn.com/content/v1/54f8a9c9e4b0b230c7abb1b9/1660606315384-BPL5WV5JDJK72ZDKEFND/image-asset.jpeg?format=300w',
         style: ['Fine Line', 'Black & Gray'],
         shop: ['Icon Tattoo: Portland, OR'],
         location: 'Portland, OR',
-        photo: '',
+        photo: 'https://images.squarespace-cdn.com/content/v1/54f8a9c9e4b0b230c7abb1b9/01225bbb-f6c1-4fad-b5eb-0bcf19c356b9/Icon_Tattoo-Mckenna_Carlisle-1.jpg?format=500w',
         reviews: [],
         portfolio: 'https://www.icontattoostudio.com/mickey-carlisle',
-    },
-
-    {
+    }, {
+        name: "Sheena Yu-Hsin Wood",
+        cover: 'https://i.imgur.com/YVbT2N9.png',
+        style: ['Neo-traditional', 'Black & Gray'],
+        shop: 'Moth and Dagger Tattoo: San Francisco, CA',
+        location: 'San Francisco, CA',
+        photo: 'https://static.wixstatic.com/media/610895_e61c52c6e80a434da5e35042b8b5f104~mv2.png/v1/fill/w_399,h_399,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/IMG_20210807_192336_099_webp.png',
+        reviews: [],
+        portfolio: 'https://www.sheenayuhsinwood.com/',
+    }, {
+        name: 'Brittany Thornton',
+        cover: 'https://images.squarespace-cdn.com/content/v1/50a9ad5ae4b040d1420fd8a0/1628717392090-XQ1FLI4G8097U3VG6PO3/IMG_5573.JPG',
+        style: ['Watercolor', 'Fine Line'],
+        shop: 'Black & Blue Tattoo: San Francisco, CA',
+        location: 'San Francisco, CA',
+        photo: 'https://images.squarespace-cdn.com/content/v1/50a9ad5ae4b040d1420fd8a0/1537729656797-JA7FSORCWQ2FOLLH6XMI/IMG_1560.jpg?format=750w',
+        reviews: [],
+        portfolio: 'http://www.blackandbluetattoo.com/brittany-thorton-1',
+    }, {
+        name: 'I D E X A',
+        cover: 'https://images.squarespace-cdn.com/content/v1/50a9ad5ae4b040d1420fd8a0/1422864718424-BCEVNW6JBBYC44MCO2OI/7609_573063636172115_7220242548270628660_n.jpg?format=300w',
+        style: ['Geometric', 'Tribal'],
+        shop: ['Black & Blue Tattoo: San Francisco, CA'],
+        location: 'San Francisco, CA',
+        photo: 'https://images.squarespace-cdn.com/content/v1/50a9ad5ae4b040d1420fd8a0/1485153564896-O01X1UK6UNXODIY15S2Z/42.jpg?format=750w',
+        reviews: [],
+        portfolio: 'http://www.blackandbluetattoo.com/idexa',
+    }, {
+        name: 'Andy Beswick',
+        cover: 'https://i.imgur.com/2e4yNSm.png',
+        style: ['American Traditional'],
+        shop: ['Monolith Tattoo Studio: Bend, OR'],
+        location: 'Bend, OR',
+        photo: 'https://monolithtattoostudio.com/wp-content/uploads/2023/02/Monolith-8-scaled.jpeg',
+        reviews: [],
+        portfolio: 'https://monolithtattoostudio.com/andy-beswick-tattoo/',
+    }, {
+        name: 'Keisha Ozias',
+        cover: 'https://i.imgur.com/BDsv9fY.png',
+        style: ['Neo-traditional', 'Floral'],
+        shop: 'Monoloth Tattoo Studio: Bend, OR',
+        location: 'Bend, OR',
+        photo: 'https://monolithtattoostudio.com/wp-content/uploads/2023/02/Monolith-11-scaled.jpeg',
+        reviews: [],
+        portfolio: 'https://monolithtattoostudio.com/keisha-ozias-tattoos/',
+    }, {
         name: '',
         cover: '',
         style: [String],
@@ -96,9 +118,7 @@ exports.artists = [
         photo: '',
         reviews: [],
         portfolio: '',
-    },
-
-    {
+    }, {
         name: '',
         cover: '',
         style: [String],
@@ -107,8 +127,7 @@ exports.artists = [
         photo: '',
         reviews: [],
         portfolio: '',
-    },    
-    {
+    }, {
         name: '',
         cover: '',
         style: [String],
@@ -117,8 +136,7 @@ exports.artists = [
         photo: '',
         reviews: [],
         portfolio: '',
-    },    
-    {
+    }, {
         name: '',
         cover: '',
         style: [String],
@@ -127,47 +145,7 @@ exports.artists = [
         photo: '',
         reviews: [],
         portfolio: '',
-    },    
-    {
-        name: '',
-        cover: '',
-        style: [String],
-        shop: [String],
-        location: '',
-        photo: '',
-        reviews: [],
-        portfolio: '',
-    },    
-    {
-        name: '',
-        cover: '',
-        style: [String],
-        shop: [String],
-        location: '',
-        photo: '',
-        reviews: [],
-        portfolio: '',
-    },    
-    {
-        name: '',
-        cover: '',
-        style: [String],
-        shop: [String],
-        location: '',
-        photo: '',
-        reviews: [],
-        portfolio: '',
-    },    
-    {
-        name: '',
-        cover: '',
-        style: [String],
-        shop: [String],
-        location: '',
-        photo: '',
-        reviews: [],
-        portfolio: '',
-    },    {
+    }, {
         name: '',    
         cover: '',
         style: [String],
@@ -176,8 +154,7 @@ exports.artists = [
         photo: '',
         reviews: [],
         portfolio: '',
-    },    
-    {
+    }, {
         name: '',
         cover: '',
         style: [String],
@@ -186,8 +163,7 @@ exports.artists = [
         photo: '',
         reviews: [],
         portfolio: '',
-    },   
-    {
+    }, {
         name: '',
         cover: '',
         style: [String],
@@ -196,7 +172,7 @@ exports.artists = [
         photo: '',
         reviews: [],
         portfolio: '',
-    },    {
+    }, {
         name: '',    
         cover: '',
         style: [String],
@@ -205,8 +181,7 @@ exports.artists = [
         photo: '',
         reviews: [],
         portfolio: '',
-    },    
-    {
+    }, {
         name: '',
         cover: '',
         style: [String],
@@ -215,8 +190,7 @@ exports.artists = [
         photo: '',
         reviews: [],
         portfolio: '',
-    },    
-    {
+    }, {
         name: '',
         cover: '',
         style: [String],
@@ -225,8 +199,7 @@ exports.artists = [
         photo: '',
         reviews: [],
         portfolio: '',
-    },    
-    {
+    }, {
         name: '',
         cover: '',
         style: [String],
