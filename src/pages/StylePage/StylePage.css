@@ -1,3 +1,7 @@
 .styles-list {
+    display: flex;
+    justify-content: space-bet;
     border: 3px solid red;
+    border-radius: 10px;
+    /* width: 150px; */
 }
