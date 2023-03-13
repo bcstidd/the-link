@@ -2,13 +2,16 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const reviewSchema = new Schema({
-    user: [userSchema],
     content: String,
     }, {
     timeStamps: true,
 })
 
-const artistSchema = newSchema({
+const artistSchema = new Schema({
+    user: {
+        type: Schema.Types.ObjectId,
+        ref: 'User'
+    },
     name: String,
     cover: String,
     style: {

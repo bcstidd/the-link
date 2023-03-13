@@ -2,8 +2,8 @@ import sendRequest from "./send-request";
 
 const BASE_URL = '/api/reviews';
 
-export function createReview(reviewData) {
-    return sendRequest(BASE_URL, 'POST', reviewData)
+export function createReview(selectedArtist, reviewData) {
+    return sendRequest(`${BASE_URL}/artist/${selectedArtist}/reviews`, 'POST', reviewData)
 }
 
 export function updateReview(reviewId, reviewData) {

@@ -1,37 +1,42 @@
 import { useParams } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import ReviewPageForm from '../../components/ReviewPageForm/ReviewPageForm';
 
 export default function ArtistBioPage({ artists, user }) {
   const { name } = useParams();
   const artist = artists.find(artist => artist.name === name);
-  const [reviews, setReviews] = useState(artist.reviews);
+  const [reviews, setReviews] = useState([]);
+  let {selectedArtist} = useParams()
+  useEffect(function(){
+    async function getReviews(selectedArtist) {
+      let artistReviews = await 
+    }
+  })
+  // const handleSubmit = (event, content) => {
+  //   event.preventDefault();
+  //   const newReview = {
+  //     user: user,
+  //     content: content,
+  //   };
+  //   setReviews([...reviews, newReview]);
+  // };
 
-  const handleSubmit = (event, content) => {
-    event.preventDefault();
-    const newReview = {
-      user: user,
-      content: content,
-    };
-    setReviews([...reviews, newReview]);
-  };
+  // const handleEdit = (event, index, content) => {
+  //   event.preventDefault();
+  //   const editedReview = {
+  //     ...reviews[index],
+  //     content: content,
+  //   };
+  //   const newReviews = [...reviews];
+  //   newReviews[index] = editedReview;
+  //   setReviews(newReviews);
+  // };
 
-  const handleEdit = (event, index, content) => {
-    event.preventDefault();
-    const editedReview = {
-      ...reviews[index],
-      content: content,
-    };
-    const newReviews = [...reviews];
-    newReviews[index] = editedReview;
-    setReviews(newReviews);
-  };
-
-  const handleDelete = (event, index) => {
-    event.preventDefault();
-    const newReviews = reviews.filter((_, i) => i !== index); 
-    setReviews(newReviews);
-  };
+  // const handleDelete = (event, index) => {
+  //   event.preventDefault();
+  //   const newReviews = reviews.filter((_, i) => i !== index); 
+  //   setReviews(newReviews);
+  // };
 
   return (
     <>
@@ -81,7 +86,7 @@ export default function ArtistBioPage({ artists, user }) {
               <p>No Reviews Yet</p>
             )}
           </div>
-          <ReviewPageForm handleSubmit={handleSubmit} />
+          <ReviewPageForm addReview={addReview} />
         </div>
       </div>
     </>
