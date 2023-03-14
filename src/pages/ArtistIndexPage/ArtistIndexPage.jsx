@@ -1,12 +1,9 @@
-import ArtistCard from "../../components/ArtistCard/ArtistCard";
+import ArtistsList from "../../components/ArtistsList/ArtistsList";
 
-export default function ArtistIndexPage({ artists }) {
-
-    return (
-      <div>
-        {artists.map((artist) => (
-          <ArtistCard key={artist.name} artist={artist} />
-        ))}
-      </div>
-    );
-  }
+export default function ArtistIndexPage({ artist }) {
+  return (
+    <div>
+      <ArtistsList artist={artist} />
+    </div>
+  );
+}

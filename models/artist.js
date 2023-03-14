@@ -7,23 +7,34 @@ const reviewSchema = new Schema({
     timeStamps: true,
 })
 
+
 const artistSchema = new Schema({
     user: {
         type: Schema.Types.ObjectId,
         ref: 'User'
     },
-    name: String,
-    cover: String,
-    style: {
-        type: [String],
-        enum: ['American Traditional', 'Fine Line', 'Black & Gray', 'Micro', 'Geometric', 'Tribal', 'Portraits', 'Japanese', 'Watercolor', 'Neo-Traditional', 'Realism', 'Trash Polka', 'Aesthetic'],
+    name: {
+        type: String,
     },
-    shop: String,  
-    location: String,
-    photo: String,
-    portfolio: String,
+    cover:{
+        type: String,
+    },
+    style:[{
+        type: String,
+}],
+    shop: {
+        type: String,
+    },
+    location:{
+        type: String,
+    },
+    photo: {
+        type: String,
+    },
+    portfolio: {
+        type: String,
+    },
     reviews: [reviewSchema],
-
 })
 
 

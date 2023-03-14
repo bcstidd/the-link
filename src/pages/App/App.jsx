@@ -1,38 +1,48 @@
-import './App.css';
-import { useState } from 'react'
-import { Routes, Route } from 'react-router-dom'
-import { getUser } from '../../utilities/users-service'
-import { artists, styles } from '../../data';
-import AuthPage from '../AuthPage/AuthPage';
-import HomePage from '../HomePage/HomePage';
-import FeaturedArtistsPage from '../FeaturedArtistsPage/FeaturedArtistsPage';
-import ArtistIndexPage from '../ArtistIndexPage/ArtistIndexPage';
-import NavBar from '../../components/NavBar/NavBar'
-import StylePage from '../StylePage/StylePage';
-import ArtistBioPage from '../ArtistBioPage/ArtistBioPage';
+import "./App.css";
+import { useState, useEffect } from "react";
+import { Routes, Route } from "react-router-dom";
+import { getUser } from "../../utilities/users-service";
+import AuthPage from "../AuthPage/AuthPage";
+// import HomePage from "../HomePage/HomePage";
+// import FeaturedArtistsPage from "../FeaturedArtistsPage/FeaturedArtistsPage";
+import ArtistIndexPage from "../ArtistIndexPage/ArtistIndexPage";
+import NavBar from "../../components/NavBar/NavBar";
+// import StylePage from "../StylePage/StylePage";
+// import ArtistBioPage from "../ArtistBioPage/ArtistBioPage";
+import * as artistsAPI from "../../utilities/artists-api";
 
 export default function App() {
-  const [ user, setUser ] = useState(getUser())
+  const [user, setUser] = useState(getUser());
+  const [artist, setArtist] = useState([""]);
+
+  useEffect(function () {
+    async function getArtist() {
+      let artists = await artistsAPI.getAllArtists();
+      setArtist(artists);
+    }
+    getArtist();
+  }, []);
 
   return (
     <main className="App">
-      {
-        <h1>The [L]ink</h1>}
-        { user ?
+      {<h1>The [L]ink</h1>}
+      {user ? (
         <>
           <NavBar user={user} setUser={setUser} />
           <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/artists" element={<ArtistIndexPage artists={artists} />} />
-            <Route path="/artists/bio/:name" element={<ArtistBioPage artists={artists} user={user} />} />
-            <Route path="/styles" element={<StylePage styles={styles} />} />
-            <Route path="/featured" element={<FeaturedArtistsPage />} />
+            {/* <Route path="/" element={<HomePage />} /> */}
+            <Route path="/" element={<ArtistIndexPage artist={artist} />} />
+            {/* <Route
+              path="/artists/bio/:name"
+              element={<ArtistBioPage artist={artist} user={user} />}
+            /> */}
+            {/* <Route path="/styles" element={<StylePage styles={styles} />} />
+            <Route path="/featured" element={<FeaturedArtistsPage />} /> */}
           </Routes>
-  
         </>
-        :
+      ) : (
         <AuthPage setUser={setUser} />
-      }
+      )}
     </main>
   );
 }

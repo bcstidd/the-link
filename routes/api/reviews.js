@@ -6,3 +6,5 @@ const ensureLoggedIn = require('../../config/ensureLoggedIn')
 // All paths start with '/api/users'
 
 router.post('/artist/:selectedArtist/reviews', reviewsCtrl.create);
+
+module.exports = router;
