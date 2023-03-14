@@ -4,12 +4,11 @@ import { useEffect } from "react";
 import * as artistsAPI from "../../utilities/artists-api";
 import * as reviewsAPI from "../../utilities/reviews-api";
 import ReviewPageForm from "../../components/ReviewPageForm/ReviewPageForm";
+import EditForm from "../../components/EditForm/EditForm"
 
-export default function ArtistBioPage({ useState, artists, user }) {
-  const [reviews, setReviews] = useState("");
+export default function ArtistBioPage({ useState, artists, user, deleteReview }) {
   const [reviewList, setReviewList] = useState([]);
   let { selectedArtist } = useParams();
-
   let [artist, setArtist] = useState({});
 
   useEffect(
@@ -33,10 +32,26 @@ export default function ArtistBioPage({ useState, artists, user }) {
 
   async function addReview(newReview, newForm) {
     const newestReview = await reviewsAPI.addReview(newReview, newForm);
-    const arraylength = reviews.length;
-    const lastReview = newestReview.reviews[arraylength];
-    setReviews([...reviews, lastReview]);
+    console.log(newestReview)
+    setReviewList([...reviewList, newestReview]);
   }
+
+  async function updateReview(reviewId, newContent) {
+    const artist = await reviewsAPI.updateReview(reviewId, newContent)
+    console.log(artist)
+    setArtist(artist) 
+    setReviewList(artist.reviews)
+  }
+
+  async function deleteReview(reviewId) {
+    await reviewsAPI.deleteReview(reviewId)
+    const idx = reviewList.findIndex(review => review._id === reviewId)
+    console.log(idx)
+    const newReviewList = [...reviewList]
+    newReviewList.splice(idx, 1)
+    setReviewList(newReviewList)
+  }
+
 
   return (
     <>
@@ -55,9 +70,13 @@ export default function ArtistBioPage({ useState, artists, user }) {
       <ReviewPageForm addReview={addReview} selectedArtist={selectedArtist} />
       <div>
         {reviewList.map((review, idx) => (
-          <div>
+          <div className="review-card">
+            <p>{user.name}:</p>
             <p>{review.content}</p>
-            <p>{user.name}</p>
+            <button onClick={() => deleteReview(review._id)}>
+            DELETE
+          </button> 
+          <EditForm updateReview={updateReview} review={review}/>        
           </div>
         ))}
       </div>

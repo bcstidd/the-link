@@ -1,4 +1,5 @@
 import { useState } from "react";
+import './ReviewPageForm.css'
 
 export default function ReviewPageForm({ addReview, selectedArtist }) {
   const [reviewForm, setReviewForm] = useState({

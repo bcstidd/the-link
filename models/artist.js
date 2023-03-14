@@ -2,10 +2,10 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const reviewSchema = new Schema({
-    content: [{
+    content: {
         type: String,
-}],
-    }, {
+    },
+}, {
     timeStamps: true,
 })
 

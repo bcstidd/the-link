@@ -7,5 +7,6 @@ const ensureLoggedIn = require('../../config/ensureLoggedIn')
 
 router.get('/:selectedArtist', reviewsCtrl.index)
 router.post('/:selectedArtist/reviews', reviewsCtrl.create);
-
+router.delete('/delete/:id', reviewsCtrl.delete)
+router.put('/:id', reviewsCtrl.update)
 module.exports = router;

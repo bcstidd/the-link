@@ -1,0 +1,19 @@
+.submit {
+    width: 100px;
+}
+
+.reviewtext {
+    height: 100px;
+    justify-self: flex-start;
+}
+
+#review {
+    width: 80px;
+    justify-self: flex-end;
+}
+
+.review-card {
+    border: 2px solid white;
+    width:200px;
+    margin: 3px;
+}

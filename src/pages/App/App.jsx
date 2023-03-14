@@ -10,11 +10,27 @@ import NavBar from "../../components/NavBar/NavBar";
 // import StylePage from "../StylePage/StylePage";
 import ArtistBioPage from "../ArtistBioPage/ArtistBioPage";
 import * as artistsAPI from "../../utilities/artists-api";
+import * as reviewsAPI from "../../utilities/reviews-api"
 
 export default function App() {
   const [user, setUser] = useState(getUser());
   const [artists, setArtists] = useState([""]);
+  const [review, setReview] = useState(['']);
 
+  async function deleteReview(deleteReview) {
+    const newReviews = await reviewsAPI.deleteReview(
+      deleteReview
+    );
+    setReview(newReviews);
+  }
+
+  async function update(updateReview) {
+    const newReviews = await reviewsAPI.updateReview(
+      updateReview
+    );
+    setReview(newReviews);
+  }
+  
   useEffect(function () {
     async function getArtists() {
       let artists = await artistsAPI.getAllArtists();
@@ -42,6 +58,7 @@ export default function App() {
                   user={user}
                   setUser={setUser}
                   artists={artists}
+                  deleteReview={deleteReview}
                 />
               }
             />
