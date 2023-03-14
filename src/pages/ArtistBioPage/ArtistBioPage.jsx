@@ -1,46 +1,49 @@
+// import ReviewPageForm from "../../components/ReviewPageForm/ReviewPageForm";
 import { useParams } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
+import * as artistsAPI from "../../utilities/artists-api";
+import * as reviewsAPI from "../../utilities/reviews-api";
 import ReviewPageForm from "../../components/ReviewPageForm/ReviewPageForm";
 
-export default function ArtistBioPage({ artists, user }) {
-  const { name } = useParams();
-  const artist = artists.find((artist) => artist.name === name);
-  const [reviews, setReviews] = useState([]);
+export default function ArtistBioPage({ useState, artist }) {
+  const [reviews, setReviews] = useState({});
+  const [reviewList, setReviewList] = useState([]);
   let { selectedArtist } = useParams();
 
-  // useEffect(function(){
-  //   async function getReviews(selectedArtist) {
-  //     let artistReviews = await
-  // })
-  // const handleSubmit = (event, content) => {
-  //   event.preventDefault();
-  //   const newReview = {
-  //     user: user,
-  //     content: content,
-  //   };
-  //   setReviews([...reviews, newReview]);
-  // };
+  useEffect(function () {
+    async function getReviews(selectedArtist) {
+      let artistReviews = await artistsAPI.getOneArtist(selectedArtist);
+      setReviews(artistReviews.review);
+    }
+    getReviews(selectedArtist);
+  }, []);
 
-  // const handleEdit = (event, index, content) => {
-  //   event.preventDefault();
-  //   const editedReview = {
-  //     ...reviews[index],
-  //     content: content,
-  //   };
-  //   const newReviews = [...reviews];
-  //   newReviews[index] = editedReview;
-  //   setReviews(newReviews);
-  // };
+  useEffect(function () {
+    async function getMyData() {
+      const artist = await reviewsAPI.getAll();
+      setReviewList(artist.reviews);
+    }
+    getMyData();
+  }, []);
 
-  // const handleDelete = (event, index) => {
-  //   event.preventDefault();
-  //   const newReviews = reviews.filter((_, i) => i !== index);
-  //   setReviews(newReviews);
-  // };
+  async function addReview(newReview, newForm) {
+    const newestReview = await reviewsAPI.addReview(newReview, newForm);
+    const arraylength = reviews.length;
+    const lastReview = newestReview.reviews[arraylength];
+    setReviews([...reviews, lastReview]);
+  }
 
   return (
     <>
       <h1>Bio page</h1>
+      <div className="bio-page"></div>
+      <ReviewPageForm addReview={addReview} selectedArtist={selectedArtist} />
+      <div>
+        {reviewList.map((review, idx) => (
+          <p>{review.content}</p>
+        ))}
+      </div>
+
       {/* <div className="bio-page">
         <h2>{artist.name}</h2>
         <h3>{artist.shop}</h3>

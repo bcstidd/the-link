@@ -8,7 +8,7 @@ import AuthPage from "../AuthPage/AuthPage";
 import ArtistIndexPage from "../ArtistIndexPage/ArtistIndexPage";
 import NavBar from "../../components/NavBar/NavBar";
 // import StylePage from "../StylePage/StylePage";
-// import ArtistBioPage from "../ArtistBioPage/ArtistBioPage";
+import ArtistBioPage from "../ArtistBioPage/ArtistBioPage";
 import * as artistsAPI from "../../utilities/artists-api";
 
 export default function App() {
@@ -30,14 +30,11 @@ export default function App() {
         <>
           <NavBar user={user} setUser={setUser} />
           <Routes>
-            {/* <Route path="/" element={<HomePage />} /> */}
             <Route path="/" element={<ArtistIndexPage artist={artist} />} />
-            {/* <Route
-              path="/artists/bio/:name"
-              element={<ArtistBioPage artist={artist} user={user} />}
-            /> */}
-            {/* <Route path="/styles" element={<StylePage styles={styles} />} />
-            <Route path="/featured" element={<FeaturedArtistsPage />} /> */}
+            <Route
+              path="/:selectedArtist"
+              element={<ArtistBioPage useState={useState} artist={artist} />}
+            />
           </Routes>
         </>
       ) : (

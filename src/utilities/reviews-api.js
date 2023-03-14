@@ -2,14 +2,12 @@ import sendRequest from "./send-request";
 
 const BASE_URL = '/api/reviews';
 
-// export function createReview(selectedArtist, reviewData) {
-//     return sendRequest(`${BASE_URL}/artist/${selectedArtist}/reviews`, 'POST', reviewData)
-// }
+export function getAll(selectedArtist) {
+    return sendRequest(`${BASE_URL}/${selectedArtist}`);
+}
 
-// export function updateReview(reviewId, reviewData) {
-//     return sendRequest(`${BASE_URL}/${reviewId}`, 'PUT', reviewData)
-// }
+export function addReview (selectedArtist, reviewForm) {
+    return sendRequest(`${BASE_URL}/${selectedArtist}/reviews`, 'POST', reviewForm);
+}
 
-// export function deleteReview(reviewId) {
-//     return sendRequest(`${BASE_URL}/${reviewId}`, 'DELETE')
-// }
+
