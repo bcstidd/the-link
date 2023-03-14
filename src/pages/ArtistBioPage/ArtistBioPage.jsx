@@ -5,7 +5,7 @@ import * as artistsAPI from "../../utilities/artists-api";
 import * as reviewsAPI from "../../utilities/reviews-api";
 import ReviewPageForm from "../../components/ReviewPageForm/ReviewPageForm";
 
-export default function ArtistBioPage({ useState, artists }) {
+export default function ArtistBioPage({ useState, artists, user }) {
   const [reviews, setReviews] = useState("");
   const [reviewList, setReviewList] = useState([]);
   let { selectedArtist } = useParams();
@@ -55,7 +55,10 @@ export default function ArtistBioPage({ useState, artists }) {
       <ReviewPageForm addReview={addReview} selectedArtist={selectedArtist} />
       <div>
         {reviewList.map((review, idx) => (
-          <p>{review.content}</p>
+          <div>
+            <p>{review.content}</p>
+            <p>{user.name}</p>
+          </div>
         ))}
       </div>
 
