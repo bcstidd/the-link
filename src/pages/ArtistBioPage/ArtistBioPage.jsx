@@ -24,14 +24,6 @@ export default function ArtistBioPage({ useState, artists }) {
   );
 
   useEffect(function () {
-    async function getReviews(selectedArtist) {
-      let artistReviews = await artistsAPI.getOneArtist(selectedArtist);
-      setReviews(artistReviews.review);
-    }
-    getReviews(selectedArtist);
-  }, []);
-
-  useEffect(function () {
     async function getMyData() {
       const artist = await reviewsAPI.getAll();
       setReviewList(artist.reviews);
@@ -49,18 +41,7 @@ export default function ArtistBioPage({ useState, artists }) {
   return (
     <>
       <h1>Bio page</h1>
-      <div className="bio-page">
-        <h2>{artist.name}</h2>
-        <h3>{artist.shop}</h3>
-        <h3>Specializes in {artist.style.join(", ")}</h3>
-        <img src={artist.photo} alt="" />
-        <div>
-          <h2>
-            Interested in learning more? View {artist.name}'s Portfolio{" "}
-            <a href={artist.portfolio}>Here</a>
-          </h2>
-        </div>
-      </div>
+      <div className="bio-page"></div>
       <ReviewPageForm addReview={addReview} selectedArtist={selectedArtist} />
       <div>
         {reviewList.map((review, idx) => (
