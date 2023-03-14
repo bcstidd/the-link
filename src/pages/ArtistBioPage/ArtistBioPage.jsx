@@ -10,7 +10,7 @@ export default function ArtistBioPage({ useState, artists }) {
   const [reviewList, setReviewList] = useState([]);
   let { selectedArtist } = useParams();
 
-  let [artist, setArtist] = useState(null);
+  let [artist, setArtist] = useState({});
 
   useEffect(
     function () {
@@ -41,7 +41,17 @@ export default function ArtistBioPage({ useState, artists }) {
   return (
     <>
       <h1>Bio page</h1>
-      <div className="bio-page"></div>
+      <div className="bio-page">
+        <h2>{artist.name}</h2>
+        <h3>{artist.shop}</h3>
+        <img src={artist.photo} alt="" />
+        <div>
+          <h2>
+            Interested in learning more? View {artist.name}'s Portfolio{" "}
+            <a href={artist.portfolio}>Here</a>
+          </h2>
+        </div>
+      </div>
       <ReviewPageForm addReview={addReview} selectedArtist={selectedArtist} />
       <div>
         {reviewList.map((review, idx) => (
