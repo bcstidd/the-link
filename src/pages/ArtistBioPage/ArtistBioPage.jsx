@@ -25,7 +25,7 @@ export default function ArtistBioPage({ useState, artists }) {
 
   useEffect(function () {
     async function getMyData() {
-      const artist = await reviewsAPI.getAll();
+      const artist = await artistsAPI.getOneArtist(selectedArtist);
       setReviewList(artist.reviews);
     }
     getMyData();
