@@ -1,9 +1,9 @@
 import ArtistsList from "../../components/ArtistsList/ArtistsList";
 
-export default function ArtistIndexPage({ artist }) {
+export default function ArtistIndexPage({ artists }) {
   return (
     <div>
-      <ArtistsList artist={artist} />
+      <ArtistsList artists={artists} />
     </div>
   );
 }

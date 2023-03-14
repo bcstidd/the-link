@@ -5,10 +5,23 @@ import * as artistsAPI from "../../utilities/artists-api";
 import * as reviewsAPI from "../../utilities/reviews-api";
 import ReviewPageForm from "../../components/ReviewPageForm/ReviewPageForm";
 
-export default function ArtistBioPage({ useState, artist }) {
-  const [reviews, setReviews] = useState({});
+export default function ArtistBioPage({ useState, artists }) {
+  const [reviews, setReviews] = useState("");
   const [reviewList, setReviewList] = useState([]);
   let { selectedArtist } = useParams();
+
+  let [artist, setArtist] = useState(null);
+
+  useEffect(
+    function () {
+      async function getArtist() {
+        let artist = await artistsAPI.getOneArtist(selectedArtist);
+        setArtist(artist);
+      }
+      getArtist();
+    },
+    [selectedArtist]
+  );
 
   useEffect(function () {
     async function getReviews(selectedArtist) {
@@ -36,7 +49,18 @@ export default function ArtistBioPage({ useState, artist }) {
   return (
     <>
       <h1>Bio page</h1>
-      <div className="bio-page"></div>
+      <div className="bio-page">
+        <h2>{artist.name}</h2>
+        <h3>{artist.shop}</h3>
+        <h3>Specializes in {artist.style.join(", ")}</h3>
+        <img src={artist.photo} alt="" />
+        <div>
+          <h2>
+            Interested in learning more? View {artist.name}'s Portfolio{" "}
+            <a href={artist.portfolio}>Here</a>
+          </h2>
+        </div>
+      </div>
       <ReviewPageForm addReview={addReview} selectedArtist={selectedArtist} />
       <div>
         {reviewList.map((review, idx) => (

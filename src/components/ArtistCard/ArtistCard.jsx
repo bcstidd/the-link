@@ -3,7 +3,7 @@ import "./ArtistCard.css";
 
 export default function ArtistCard({ artist }) {
   return (
-    <Link to={`/${artist._id}`}>
+    <Link to={`/artists/${artist._id}`}>
       <div
         style={{
           background: `url(${artist.cover}) no-repeat center center`,

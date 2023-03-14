@@ -9,7 +9,7 @@ export default function NavBar({ user, setUser }) {
 
   return (
     <nav>
-      <Link to="/">All Artists</Link>
+      <Link to="/artists">All Artists</Link>
       &nbsp; | &nbsp;
       {/* <Link to="/styles">Tattoo Styles</Link> */}
       &nbsp; | &nbsp;
