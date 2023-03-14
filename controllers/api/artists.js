@@ -7,8 +7,8 @@ module.exports = {
 
 async function index(req, res) {
   try {
-  let artist = await Artist.find({})
-    res.json(artist)
+  let artists = await Artist.find({})
+    res.json(artists)
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: 'Server error' });
@@ -16,6 +16,6 @@ async function index(req, res) {
 }
 
 async function show(req, res) {
-  const oneArtist = await Artist.findById(req.params.selectedArtist)
-  return res.json(oneArtist)
+  const artist = await Artist.findById(req.params.selectedArtist)
+  return res.json(artist)
 }

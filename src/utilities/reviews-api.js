@@ -10,4 +10,3 @@ export function addReview (selectedArtist, reviewForm) {
     return sendRequest(`${BASE_URL}/${selectedArtist}/reviews`, 'POST', reviewForm);
 }
 
-

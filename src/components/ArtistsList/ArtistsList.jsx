@@ -1,9 +1,9 @@
 import ArtistCard from "../ArtistCard/ArtistCard";
 
-export default function ArtistIndexPage({ artist }) {
+export default function ArtistIndexPage({ artists }) {
   return (
     <>
-      {artist.map((artist, idx) => (
+      {artists.map((artist, idx) => (
         <ArtistCard artist={artist} key={idx} />
       ))}
     </>

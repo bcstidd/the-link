@@ -5,22 +5,27 @@ import * as artistsAPI from "../../utilities/artists-api";
 import * as reviewsAPI from "../../utilities/reviews-api";
 import ReviewPageForm from "../../components/ReviewPageForm/ReviewPageForm";
 
-export default function ArtistBioPage({ useState, artist }) {
-  const [reviews, setReviews] = useState({});
+export default function ArtistBioPage({ useState, artists, user }) {
+  const [reviews, setReviews] = useState("");
   const [reviewList, setReviewList] = useState([]);
   let { selectedArtist } = useParams();
 
-  useEffect(function () {
-    async function getReviews(selectedArtist) {
-      let artistReviews = await artistsAPI.getOneArtist(selectedArtist);
-      setReviews(artistReviews.review);
-    }
-    getReviews(selectedArtist);
-  }, []);
+  let [artist, setArtist] = useState({});
+
+  useEffect(
+    function () {
+      async function getArtist() {
+        let artist = await artistsAPI.getOneArtist(selectedArtist);
+        setArtist(artist);
+      }
+      getArtist();
+    },
+    [selectedArtist]
+  );
 
   useEffect(function () {
     async function getMyData() {
-      const artist = await reviewsAPI.getAll();
+      const artist = await artistsAPI.getOneArtist(selectedArtist);
       setReviewList(artist.reviews);
     }
     getMyData();
@@ -36,11 +41,24 @@ export default function ArtistBioPage({ useState, artist }) {
   return (
     <>
       <h1>Bio page</h1>
-      <div className="bio-page"></div>
+      <div className="bio-page">
+        <h2>{artist.name}</h2>
+        <h3>{artist.shop}</h3>
+        <img src={artist.photo} alt="" />
+        <div>
+          <h2>
+            Interested in learning more? View {artist.name}'s Portfolio{" "}
+            <a href={artist.portfolio}>Here</a>
+          </h2>
+        </div>
+      </div>
       <ReviewPageForm addReview={addReview} selectedArtist={selectedArtist} />
       <div>
         {reviewList.map((review, idx) => (
-          <p>{review.content}</p>
+          <div>
+            <p>{review.content}</p>
+            <p>{user.name}</p>
+          </div>
         ))}
       </div>
 
