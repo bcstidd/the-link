@@ -8,12 +8,12 @@ export default function NavBar({ user, setUser }) {
   }
 
   return (
-    <nav>
+    <nav className="nav">
       <Link to="/artists">All Artists</Link>
       &nbsp; | &nbsp;
-      {/* <Link to="/styles">Tattoo Styles</Link> */}
+      <Link to="/styles">Tattoo Styles</Link>
       &nbsp; | &nbsp;
-      {/* <Link to="/featured">Artist Spotlight</Link> */}
+      <Link to="/featured">Artist Spotlight</Link>
       &nbsp;&nbsp; Welcome, {user.name}
       &nbsp;&nbsp;
       <Link to="" onClick={handleLogOut}>

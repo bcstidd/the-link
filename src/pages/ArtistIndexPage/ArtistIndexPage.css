@@ -1,0 +1,36 @@
+.card {
+    display: flex;
+    color: white;
+    align-items: flex-end;
+    width: 30%;
+    margin: 10px;
+}
+
+.card:nth-child(1),
+.card:nth-child(2),
+.card:nth-child(3) {
+    margin-top: 0;
+}
+
+.card:nth-child(4),
+.card:nth-child(5),
+.card:nth-child(6) {
+    margin-top: 20px;
+}
+
+.card:nth-child(7),
+.card:nth-child(8),
+.card:nth-child(9) {
+    margin-top: 40px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.artist-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 15px;
+}

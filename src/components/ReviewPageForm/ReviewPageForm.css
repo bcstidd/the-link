@@ -14,6 +14,11 @@
 
 .review-card {
     border: 2px solid white;
-    width:200px;
+    width:250px;
     margin: 3px;
+}
+
+.review {
+    display: flex;
+    
 }

@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import { getUser } from "../../utilities/users-service";
 import AuthPage from "../AuthPage/AuthPage";
-// import HomePage from "../HomePage/HomePage";
+import HomePage from "../HomePage/HomePage";
 // import FeaturedArtistsPage from "../FeaturedArtistsPage/FeaturedArtistsPage";
 import ArtistIndexPage from "../ArtistIndexPage/ArtistIndexPage";
 import NavBar from "../../components/NavBar/NavBar";
@@ -30,7 +30,7 @@ export default function App() {
     );
     setReview(newReviews);
   }
-  
+
   useEffect(function () {
     async function getArtists() {
       let artists = await artistsAPI.getAllArtists();
@@ -41,13 +41,13 @@ export default function App() {
 
   return (
     <main className="App">
-      {<h1>The [L]ink</h1>}
+      <div className='title'>{<h1>The [L]ink</h1>}</div>
       {user ? (
         <>
           <NavBar user={user} setUser={setUser} />
           <Routes>
-            <Route
-              path="/artists"
+            <Route path='' element={<HomePage />} />
+            <Route  path="/artists"
               element={<ArtistIndexPage artists={artists} />}
             />
             <Route

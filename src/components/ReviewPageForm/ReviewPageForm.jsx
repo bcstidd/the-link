@@ -21,7 +21,7 @@ export default function ReviewPageForm({ addReview, selectedArtist }) {
   }
   return (
     <>
-      <h1>FORM</h1>
+      <h4 className="review">What people say about them:</h4>
       <form onSubmit={handleSubmit}>
         <label>Review:</label>
         <input

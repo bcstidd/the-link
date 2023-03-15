@@ -11,10 +11,10 @@ export default function ArtistCard({ artist }) {
           height: "200px",
           width: "300px",
         }}
-        className="card"
-      >
+        className="card">
         <div className="artist-name">
           <h1>{artist.name}</h1>
+          <h4>{artist.location}</h4>
         </div>
       </div>
     </Link>

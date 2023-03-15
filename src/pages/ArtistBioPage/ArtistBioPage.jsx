@@ -5,7 +5,7 @@ import * as artistsAPI from "../../utilities/artists-api";
 import * as reviewsAPI from "../../utilities/reviews-api";
 import ReviewPageForm from "../../components/ReviewPageForm/ReviewPageForm";
 import EditForm from "../../components/EditForm/EditForm"
-
+import './ArtistBioPage.css'
 export default function ArtistBioPage({ useState, artists, user, deleteReview }) {
   const [reviewList, setReviewList] = useState([]);
   let { selectedArtist } = useParams();
@@ -59,7 +59,7 @@ export default function ArtistBioPage({ useState, artists, user, deleteReview })
       <div className="bio-page">
         <h2>{artist.name}</h2>
         <h3>{artist.shop}</h3>
-        <img src={artist.photo} alt="" />
+        <img id="bio-photo" src={artist.photo} alt="" />
         <div>
           <h2>
             Interested in learning more? View {artist.name}'s Portfolio{" "}
@@ -74,76 +74,12 @@ export default function ArtistBioPage({ useState, artists, user, deleteReview })
             <p>{user.name}:</p>
             <p>{review.content}</p>
             <button onClick={() => deleteReview(review._id)}>
-            DELETE
+            Delete
           </button> 
           <EditForm updateReview={updateReview} review={review}/>        
           </div>
         ))}
       </div>
-
-      {/* <div className="bio-page">
-        <h2>{artist.name}</h2>
-        <h3>{artist.shop}</h3>
-        <h3>Specializes in {artist.style.join(", ")}</h3>
-        <img src={artist.photo} alt="" />
-        <div>
-          <h2>
-            Interested in learning more? View {artist.name}'s Portfolio{" "}
-            <a href={artist.portfolio}>Here</a>
-          </h2>
-          <h2>Reviews</h2>
-          <div className="review-card">
-            {reviews.length > 0 ? (
-              reviews.map((review, index) => (
-                <div key={index}>
-                  <p>{review.user.name} says:</p>
-                  {review.editing ? (
-                    <form
-                      onSubmit={(event) =>
-                        handleEdit(event, index, review.content)
-                      }
-                    >
-                      <label>
-                        Edit your review:
-                        <input type="text" defaultValue={review.content} />
-                      </label>
-                      <button type="submit">Update</button>
-                      <button onClick={(event) => handleDelete(event, index)}>
-                        Delete
-                      </button>
-                    </form>
-                  ) : (
-                    <div>
-                      <p>{review.content}</p>
-                      {user && review.user.id === user.id && (
-                        <div>
-                          <button
-                            onClick={() => {
-                              const newReviews = [...reviews];
-                              newReviews[index] = { ...review, editing: true };
-                              setReviews(newReviews);
-                            }}
-                          >
-                            Edit
-                          </button>
-                          <button
-                            onClick={(event) => handleDelete(event, index)}
-                          >
-                            Delete
-                          </button>
-                        </div>
-                      )}
-                    </div>
-                  )}
-                </div>
-              ))
-            ) : (
-              <p>No Reviews Yet</p>
-            )}
-          </div>
-          <ReviewPageForm addReview={addReview} />
-        </div>
-      </div> */}
     </>
   );
 }

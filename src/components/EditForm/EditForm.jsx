@@ -1,3 +1,4 @@
+import "./EditForm.css"
 import {useState} from 'react'
 
 export default function EditForm({review, updateReview}) {
@@ -20,12 +21,9 @@ export default function EditForm({review, updateReview}) {
 
       return(
       <>
-        <h1>Edit Form</h1>
-        <form onSubmit={handleSubmit}>
+        <form className="edit" onSubmit={handleSubmit}>
             <input name='content' type='text' value={formData.content} onChange={handleChange}/>
-            <button type="submit">
-                Edit
-            </button> 
+            <button type="submit">Edit</button> 
         </form>
       </>
     )

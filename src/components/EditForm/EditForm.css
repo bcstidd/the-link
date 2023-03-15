@@ -1,0 +1,10 @@
+.edit > input {
+    background-color: #D5B87E;
+    
+}
+
+.edit>button {
+    width: 70px;
+    justify-self: flex-end;
+    margin-right: 10px;
+}
