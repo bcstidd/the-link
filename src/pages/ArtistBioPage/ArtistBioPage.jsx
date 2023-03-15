@@ -55,7 +55,7 @@ export default function ArtistBioPage({ useState, artists, user, deleteReview })
 
   return (
     <>
-      <div className="artist-bio-name">{artist.name}</h1></div>
+      <h1 className="artist-name">{artist.name}</h1>
       <div className="bio-page">
         <h3>{artist.shop}</h3>
         <img id="bio-photo" src={artist.photo} alt="" />

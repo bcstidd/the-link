@@ -14,9 +14,18 @@ body {
 
 .delete {
     color: #B3464A;
+    margin: 0px 0px -10px 5px;
     width: 70px;
 }
 
 p.review-name {
+    align-self: flex-start;
+    margin: 10px;
     color: #93A29B;
+    font-size: larger;
+}
+
+.artist-name {
+    color: white;
+    font-weight: 500;
 }
