@@ -6,3 +6,17 @@ body {
     height: 350px;
     border-radius: 5px;
 }
+
+#edit-form {
+    display: flex;
+    justify-content: center;
+}
+
+.delete {
+    color: #B3464A;
+    width: 70px;
+}
+
+p.review-name {
+    color: #93A29B;
+}

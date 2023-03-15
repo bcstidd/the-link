@@ -1,3 +1,12 @@
+.edit {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 15px 0px 15px 0px;
+    border-top: 4px solid #104544;;
+    padding: 10px;
+    padding-top: 20px;
+    border-radius: 5px;
+}
 .edit > input {
     background-color: #D5B87E;
     
@@ -6,5 +15,4 @@
 .edit>button {
     width: 70px;
     justify-self: flex-end;
-    margin-right: 10px;
 }

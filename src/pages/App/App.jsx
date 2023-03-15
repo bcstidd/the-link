@@ -7,7 +7,7 @@ import HomePage from "../HomePage/HomePage";
 // import FeaturedArtistsPage from "../FeaturedArtistsPage/FeaturedArtistsPage";
 import ArtistIndexPage from "../ArtistIndexPage/ArtistIndexPage";
 import NavBar from "../../components/NavBar/NavBar";
-// import StylePage from "../StylePage/StylePage";
+import StylePage from "../StylePage/StylePage";
 import ArtistBioPage from "../ArtistBioPage/ArtistBioPage";
 import * as artistsAPI from "../../utilities/artists-api";
 import * as reviewsAPI from "../../utilities/reviews-api"
@@ -47,6 +47,7 @@ export default function App() {
           <NavBar user={user} setUser={setUser} />
           <Routes>
             <Route path='' element={<HomePage />} />
+            {/* <Route path='/styles' element={<StylePage artists={artists} />} /> */}
             <Route  path="/artists"
               element={<ArtistIndexPage artists={artists} />}
             />

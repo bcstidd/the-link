@@ -23,7 +23,7 @@ export default function ReviewPageForm({ addReview, selectedArtist }) {
     <>
       <h4 className="review">What people say about them:</h4>
       <form onSubmit={handleSubmit}>
-        <label>Review:</label>
+        <label className="review">Review:</label>
         <input
           type="text"
           name="content"

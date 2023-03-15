@@ -55,9 +55,8 @@ export default function ArtistBioPage({ useState, artists, user, deleteReview })
 
   return (
     <>
-      <h1>Bio page</h1>
+      <div className="artist-bio-name">{artist.name}</h1></div>
       <div className="bio-page">
-        <h2>{artist.name}</h2>
         <h3>{artist.shop}</h3>
         <img id="bio-photo" src={artist.photo} alt="" />
         <div>
@@ -71,9 +70,9 @@ export default function ArtistBioPage({ useState, artists, user, deleteReview })
       <div>
         {reviewList.map((review, idx) => (
           <div className="review-card">
-            <p>{user.name}:</p>
-            <p>{review.content}</p>
-            <button onClick={() => deleteReview(review._id)}>
+            <p className="review-name">{user.name} said:</p>
+            <p>"{review.content}"</p>
+            <button className="delete" onClick={() => deleteReview(review._id)}>
             Delete
           </button> 
           <EditForm updateReview={updateReview} review={review}/>        
