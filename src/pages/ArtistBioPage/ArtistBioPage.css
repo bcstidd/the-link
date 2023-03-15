@@ -23,9 +23,12 @@ p.review-name {
     margin: 10px;
     color: #93A29B;
     font-size: larger;
+    
 }
 
 .artist-name {
     color: white;
     font-weight: 500;
+    border-radius: 10px;
+    background-color: none;
 }

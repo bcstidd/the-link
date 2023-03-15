@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { artists } from '../../data';
 
 export default function StylePage() {
@@ -11,13 +12,33 @@ export default function StylePage() {
     return acc;
   }, []);
 
+  const [selectedStyle, setSelectedStyle] = useState(null);
+
+  // Filter the artists by the selected style
+  const filteredArtists = selectedStyle
+    ? artists.filter((artist) => artist.style.includes(selectedStyle))
+    : artists;
+
   return (
     <div className='styleList'>
       <h1>Styles</h1>
-        <p>{allStyles.map((style) => (
-          <li key={style}>{style}</li>
+      <ul>
+        {allStyles.map((style) => (
+          <li key={style} onClick={() => setSelectedStyle(style)}>
+            {style}
+          </li>
         ))}
-      </p>
+      </ul>
+      {selectedStyle && (
+        <div>
+          <h2>{selectedStyle} Artists</h2>
+          <ul>
+            {filteredArtists.map((artist) => (
+              <li key={artist.id}>{artist.name}</li>
+            ))}
+          </ul>
+        </div>
+      )}
     </div>
   );
 }
