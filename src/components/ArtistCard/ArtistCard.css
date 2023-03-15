@@ -5,7 +5,11 @@
     object-fit: scale-down;
     background-position: "center";
 }
-.artist-link {
+.artist-name {
     text-decoration: none;
     color: white;
+    border: 3px solid white;
+    
+    width: 100%;
+    background-color: hsla(201, 100%, 15%, 0.3);
 }

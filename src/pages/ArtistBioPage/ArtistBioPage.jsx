@@ -68,6 +68,7 @@ export default function ArtistBioPage({ useState, artists, user, deleteReview })
       </div>
       <ReviewPageForm addReview={addReview} selectedArtist={selectedArtist} />
       <div>
+        
         {reviewList.map((review, idx) => (
           <div className="review-card">
             <p className="review-name">{user.name} said:</p>
