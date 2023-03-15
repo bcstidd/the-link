@@ -9,7 +9,7 @@
   <body>
     <h1>The [L]ink</h1>
     <h3>A directory to your dream tattoo artist</h3>
-    <h5>As a native to the PNW, there seems to always be the need for a referral to a great artist, whether it be for friend, family, or yourself, The [L]ink has got you covered!</h5>
+    <h5>As a local in the PNW, there seems to always be the need for a referral to a great artist - whether it be for friend, family, or yourself. The [L]ink has got you covered!</h5>
     <a href="https://the-tattoo-link.herokuapp.com ">Check it out here!</a>
 
 <ol>The flow is simple:
