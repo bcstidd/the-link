@@ -6,7 +6,7 @@ const reviewSchema = new Schema({
         type: String,
     },
 }, {
-    timeStamps: true,
+    timestamps: true,
 })
 
 

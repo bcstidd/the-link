@@ -1,65 +1,74 @@
-import "./App.css";
-import { useState, useEffect } from "react";
-import { Routes, Route } from "react-router-dom";
-import { getUser } from "../../utilities/users-service";
-import AuthPage from "../AuthPage/AuthPage";
-import HomePage from "../HomePage/HomePage";
-// import FeaturedArtistsPage from "../FeaturedArtistsPage/FeaturedArtistsPage";
-import ArtistIndexPage from "../ArtistIndexPage/ArtistIndexPage";
-import NavBar from "../../components/NavBar/NavBar";
-import StylePage from "../StylePage/StylePage";
-import ArtistBioPage from "../ArtistBioPage/ArtistBioPage";
-import * as artistsAPI from "../../utilities/artists-api";
-import * as reviewsAPI from "../../utilities/reviews-api"
+// /src/pages/App.jsx
+import React, { useState, useEffect } from 'react';
+import { Routes, Route } from 'react-router-dom';
+import { getUser } from '../../utilities/users-service';
+import AuthPage from '../AuthPage/AuthPage';
+import HomePage from '../HomePage/HomePage';
+import ArtistIndexPage from '../ArtistIndexPage/ArtistIndexPage';
+import NavBar from '../../components/NavBar/NavBar';
+import ArtistBioPage from '../ArtistBioPage/ArtistBioPage';
+import * as artistsAPI from '../../utilities/artists-api';
+import * as reviewsAPI from '../../utilities/reviews-api';
 
 export default function App() {
   const [user, setUser] = useState(getUser());
-  const [artists, setArtists] = useState([""]);
-  const [review, setReview] = useState(['']);
+  const [artists, setArtists] = useState([]);
+  const [reviews, setReviews] = useState([]);
 
-  async function deleteReview(deleteReview) {
-    const newReviews = await reviewsAPI.deleteReview(
-      deleteReview
-    );
-    setReview(newReviews);
-  }
-
-  async function update(updateReview) {
-    const newReviews = await reviewsAPI.updateReview(
-      updateReview
-    );
-    setReview(newReviews);
-  }
-
-  useEffect(function () {
-    async function getArtists() {
-      let artists = await artistsAPI.getAllArtists();
-      setArtists(artists);
+  async function deleteReview(reviewId) {
+    try {
+      const newReviews = await reviewsAPI.deleteReview(reviewId);
+      setReviews(newReviews);
+    } catch (error) {
+      console.error(error);
     }
-    getArtists();
+  }
+
+  async function updateReview(updatedReview) {
+    try {
+      const newReviews = await reviewsAPI.updateReview(updatedReview);
+      setReviews(newReviews);
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  useEffect(() => {
+    async function fetchArtists() {
+      try {
+        const fetchedArtists = await artistsAPI.getAllArtists();
+        setArtists(fetchedArtists);
+      } catch (error) {
+        console.error(error);
+      }
+    }
+
+    fetchArtists();
   }, []);
 
   return (
     <main className="App">
-      <div className='title'>{<h1>The [L]ink</h1>}</div>
+      <div className="title">
+        {<h1>The [L]ink</h1>}
+      </div>
       {user ? (
         <>
           <NavBar user={user} setUser={setUser} />
           <Routes>
-            <Route path='' element={<HomePage />} />
-            {/* <Route path='/styles' element={<StylePage artists={artists} />} /> */}
-            <Route  path="/artists"
-              element={<ArtistIndexPage artists={artists} />}
-            />
+            <Route path="/" element={<HomePage />} />
+            {/* Uncomment the line below when StylePage is ready */}
+            {/* <Route path="/styles" element={<StylePage artists={artists} />} /> */}
+            <Route path="/artists" element={<ArtistIndexPage artists={artists} />} />
             <Route
               path="/artists/:selectedArtist"
               element={
                 <ArtistBioPage
-                  useState={useState}
                   user={user}
                   setUser={setUser}
                   artists={artists}
                   deleteReview={deleteReview}
+                  updateReview={updateReview}
+                  reviews={reviews}
                 />
               }
             />
