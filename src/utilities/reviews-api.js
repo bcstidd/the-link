@@ -1,20 +1,30 @@
-import sendRequest from "./send-request";
+// reviews-api.js
 
-const BASE_URL = '/api/reviews';
+import axios from 'axios';
 
-export function getAll(selectedArtist) {
-    return sendRequest(`${BASE_URL}/${selectedArtist}`);
-}
+const baseURL = '/api/reviews';
 
-export function addReview (selectedArtist, reviewForm) {
-    return sendRequest(`${BASE_URL}/${selectedArtist}/reviews`, 'POST', reviewForm);
-}
+export const getAll = async () => {
+  const response = await axios.get(baseURL);
+  return response.data;
+};
 
-export function updateReview (reviewId, review) {
-    return sendRequest(`${BASE_URL}/${reviewId}`, 'PUT', {content: review.content})
-}
+export const getReviewsByArtist = async (artistId) => {
+  const response = await axios.get(`${baseURL}/artists/${artistId}`);
+  return response.data;
+};
 
-export function deleteReview (review) {
-    return sendRequest(`${BASE_URL}/delete/${review}`, 'DELETE');
-}
+export const addReview = async (review, artist) => {
+  const response = await axios.post(`${baseURL}/artists/${artist}`, review);
+  return response.data;
+};
 
+export const updateReview = async (reviewId, updatedReview) => {
+  const response = await axios.put(`${baseURL}/${reviewId}`, updatedReview);
+  return response.data;
+};
+
+export const deleteReview = async (reviewId) => {
+  const response = await axios.delete(`${baseURL}/${reviewId}`);
+  return response.data;
+};
